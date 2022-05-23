@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<h2>Lost IDs</h2>
+<div class="container">
+    <div>
+        <br/>
+        <form action="{% url 'search_results' %}" class="form-inline" method="get">
+
+           <div class="form-group mx-sm-3 mb-2">
+            <label for="" class="sr-only">search</label>
+            <input name="search" type="" class="form-control" id="" placeholder="Keyword">
+            </div>
+            <button type="submit" class="btn btn-success btn-lg mb-2">Search</button>
+       </form>
+            <br/>
+    </div>
+</div>
+
+<div class="row">
+{% for id in items %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{{ id.Image.url }}" alt ="{{id.ID_num}}" width="400px" height="300px">
+            <div class="card-body">
+                <h5 class="card-title">ID Number: {{ id.ID_num }}</h5>
+                <!-- <p class="card-text">{{ id.Pick_up_location }}</p> -->
+                <a href="{% url 'id_detail' id.pk %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+</div>
+{% endblock %}

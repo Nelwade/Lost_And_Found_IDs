@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block page_content %}
+<h1>ID Number: {{ lost_id.ID_num }}</h1>
+<div class="row">
+    <div class="col-md-8">
+        <img src="{{ lost_id.Image.url }}" alt="" width="100%">
+    </div>
+    <div class="col-md-4">
+        <h5>ID Details:</h5>
+        <dl>
+            <dt>Date Found:</dt>
+            <dd>{{ lost_id.Find_Date.date }}</dd>
+            <dt>Location Found:</dt>
+            <dd>{{ lost_id.Location_found }}</dd>
+            <dt>Pick Up Location:</dt>
+            <dd>{{ lost_id.Pick_up_location }}</dd>
+        </dl>
+        <!-- <p>{{ lost_id.Find_Date.date }}</p>
+        <p>{{ lost_id.Location_found }}</p>
+        <p>{{ lost_id.Pick_up_location }}</p> -->
+        
+    </div>
+</div>
+{% endblock %}
