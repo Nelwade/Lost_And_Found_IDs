@@ -10,7 +10,7 @@ class ID_Admin(admin.ModelAdmin):
 
     image_tag.short_description = 'Image'
 
-    # list_display = ['image_tag']
+    list_display = ['ID_num', 'Find_Date']
     readonly_fields = ['image_tag', 'ID_num', 'Location_found']
 
 admin.site.register(Id_item, ID_Admin)

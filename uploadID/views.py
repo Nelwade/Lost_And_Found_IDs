@@ -8,7 +8,7 @@ from django.db.models import Q
 # Create your views here.
 
 def homepage(request):
-    items = Id_item.objects.all()
+    items = Id_item.objects.all().order_by('-Find_Date')
     context = {'items': items}
     return render(request, 'homepage.html', context)
 
@@ -21,7 +21,8 @@ def upload_lost_id (request):
                 ID_num = form.cleaned_data['ID_num'],
                 Location_found = form.cleaned_data['Location_found'],
                 Pick_up_location = form.cleaned_data['Pick_up_location'],
-                Image = form.cleaned_data['Image']
+                Image = form.cleaned_data['Image'],
+                contact = form.cleaned_data['contact']
             )
             Lost_id.save()
             return redirect(reverse('homepage'))

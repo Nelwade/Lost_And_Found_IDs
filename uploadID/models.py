@@ -8,6 +8,7 @@ class Id_item(models.Model):
     Image = models.ImageField(upload_to='images')
     Find_Date = models.DateTimeField(auto_now_add=True)
     Pick_up_location = models.CharField(max_length=100)
+    contact = models.CharField(max_length=20)
 
     def __str__(self):
         return self.ID_num

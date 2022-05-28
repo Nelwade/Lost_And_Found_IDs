@@ -14,3 +14,7 @@ class UploadForm(forms.Form):
         max_length=100,
         widget=forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Pick Up Location'})
     )
+    contact = forms.CharField(
+        max_length=30,
+        widget=forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Contact Information'})
+    )
